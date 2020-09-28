@@ -94,10 +94,10 @@ class GeneralDataProcessor(DataProcessor):
         """See base class."""
         if not self.file_extension:
             return self._create_examples(
-            self._read_tsv(os.path.join(self.data_dir, "dev.tsv")), "dev")
+            self._read_tsv(os.path.join(self.data_dir, "test.tsv")), "test")
         else:
             return self._create_examples(
-            self._read_tsv(os.path.join(self.data_dir, "dev_" + self.file_extension + ".tsv")), "dev")
+            self._read_tsv(os.path.join(self.data_dir, "test_" + self.file_extension + ".tsv")), "test")
 
     def _create_examples(self, lines, set_type):
         """Creates examples for the training and dev sets."""
